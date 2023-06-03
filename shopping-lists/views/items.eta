@@ -1,0 +1,18 @@
+<% layout("./layouts/layout.eta") %>
+
+<h2>Add a shopping list item</h2>
+<form method="post">
+  <label>Name: <input type="text" name="name"></label>
+  <input type="submit" value="Add">
+</form>
+
+<h2>Shopping list items</h2>
+<ul>
+  <% it.items.forEach(list => { %>
+    <li>
+      <%= item.name %>
+      <button type="button" class="btn btn-success">Mark collected!</button>
+      <p><del>This line of text is meant to be treated as deleted text.</del></p>
+    </li>
+  <% }); %>
+</ul>
